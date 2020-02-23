@@ -1,0 +1,16 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^domain.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.domain.com$
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) /$1 [L]
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
