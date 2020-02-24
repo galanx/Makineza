@@ -1,15 +1,33 @@
 {
-    "autoload": {
-        "psr-4": { "": "src/" }
-    },
+    "name": "makineza/makineza",
+    "description": "The Makineza PHP Framework.",
+    "keywords": ["framework", "makineza"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Albert Feka",
+            "email": "feka.albert@gmail.com"
+        }
+    ],
     "require": {
-        "symfony/http-foundation": "^5.0",
-        "symfony/routing": "^5.0",
-        "symfony/http-kernel": "^5.0",
-        "symfony/event-dispatcher": "^5.0",
-        "pimple/pimple": "^3.2"
+        "php": "^7.2",
+        "makineza/framework": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
 }
