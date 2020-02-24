@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use Makineza\Listener\ContentLengthListener;
+use Makineza\Listener\GoogleListener;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel;
@@ -28,7 +31,13 @@ $matcher = new CompiledUrlMatcher($compiledRoutes, $context);
 $controllerResolver = new HttpKernel\Controller\ControllerResolver();
 $argumentResolver = new HttpKernel\Controller\ArgumentResolver();
 
-$framework = new Makineza\Framework($matcher, $controllerResolver, $argumentResolver);
+$dispatcher = new EventDispatcher();
+$dispatcher->addSubscriber(new ContentLengthListener());
+$dispatcher->addSubscriber(new GoogleListener());
+
+$framework = new Makineza\Framework($dispatcher, $matcher, $controllerResolver, $argumentResolver);
 $response = $framework->handle($request);
+
+
 
 $response->send();

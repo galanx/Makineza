@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38c892fb0fbafeb50948a17e8a5bad72",
+    "content-hash": "52ffa7f9e9ae25f8fe8bed35f63daef8",
     "packages": [
         {
             "name": "psr/event-dispatcher",
