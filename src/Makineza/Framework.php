@@ -7,11 +7,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-class Framework
+class Framework implements HttpKernelInterface
 {
     
     protected $dispatcher;
@@ -31,8 +32,11 @@ class Framework
         $this->argumentResolver = $argumentResolver;
     }
     
-    public function handle(Request $request)
-    {
+    public function handle(
+        Request $request,
+        $type = self::MASTER_REQUEST,
+        $catch = true
+    ) {
         $this->matcher->getContext()->fromRequest($request);
         
         try {
@@ -47,7 +51,7 @@ class Framework
         } catch (\Exception $exception) {
             $response = new Response('An error occurred', 500);
         }
-    
+        
         $this->dispatcher->dispatch(new ResponseEvent($request, $response), 'response');
         
         return $response;
