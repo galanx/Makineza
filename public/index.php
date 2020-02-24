@@ -38,7 +38,9 @@ $dispatcher->addSubscriber(new GoogleListener());
 $framework = new Makineza\Framework($dispatcher, $matcher, $controllerResolver, $argumentResolver);
 $framework = new HttpKernel\HttpCache\HttpCache(
     $framework,
-    new HttpKernel\HttpCache\Store(__DIR__.'/../cache')
+    new HttpKernel\HttpCache\Store(__DIR__.'/../cache'),
+    new HttpKernel\HttpCache\Esi(),
+    ['debug' => false]
 );
 
 $framework->handle($request)->send();
