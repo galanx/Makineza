@@ -8,10 +8,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\HttpKernel\EventListener\RouterListener;
-use Makineza\Listener\StringResponseListener;
-use Symfony\Component\HttpKernel\EventListener\ResponseListener;
-use Symfony\Component\HttpKernel\EventListener\ErrorListener;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use Makineza\Event\Dispatcher as EventDispatcher;
 use Makineza\Framework;
 
 $container = new Container();
@@ -44,28 +41,13 @@ $container['argument_resolver'] = function (Container $container) {
     return new ArgumentResolver();
 };
 
-$container['listener.string_response'] = function (Container $container) {
-    return new StringResponseListener();
-};
-
 $container['listener.router'] = function (Container $container) {
     return new RouterListener($container['matcher'], $container['request_stack']);
-};
-
-$container['listener.response'] = function (Container $container) {
-    return new ResponseListener('UTF-8');
-};
-
-$container['listener.exception'] = function (Container $container) {
-    return new ErrorListener('Makineza\Exception\ExceptionHandler::handle');
 };
 
 $container['dispatcher'] = function (Container $container) {
     $dispatcher = new EventDispatcher();
     $dispatcher->addSubscriber($container['listener.router']);
-    $dispatcher->addSubscriber($container['listener.response']);
-    $dispatcher->addSubscriber($container['listener.string_response']);
-    $dispatcher->addSubscriber($container['listener.exception']);
     
     return $dispatcher;
 };

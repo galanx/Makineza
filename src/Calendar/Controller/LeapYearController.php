@@ -4,7 +4,6 @@ namespace Calendar\Controller;
 
 use Calendar\Model\LeapYear;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class LeapYearController
 {

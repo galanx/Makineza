@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "385403d329c0e05658fbac75a881d487",
+    "content-hash": "e44871d1921719f2f5782e35e70c9117",
     "packages": [
+        {
+            "name": "makineza/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/galanx/makineza-framework.git",
+                "reference": "03b1b91af5a00003d86d3079f62e1795ae74d110"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/galanx/makineza-framework/zipball/03b1b91af5a00003d86d3079f62e1795ae74d110",
+                "reference": "03b1b91af5a00003d86d3079f62e1795ae74d110",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "pimple/pimple": "^3.2",
+                "symfony/event-dispatcher": "^5.0",
+                "symfony/http-foundation": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/routing": "^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Makineza\\": "src/Makineza/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Albert Feka",
+                    "email": "feka.albert@gmail.com"
+                }
+            ],
+            "description": "The Makineza PHP Framework package.",
+            "keywords": [
+                "framework",
+                "makineza"
+            ],
+            "time": "2020-02-26T15:30:42+00:00"
+        },
         {
             "name": "pimple/pimple",
             "version": "v3.2.3",
@@ -1299,16 +1347,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.0.0",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "a48807183a4b819072f26e347bbd0b5199a9d15f"
+                "reference": "cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/a48807183a4b819072f26e347bbd0b5199a9d15f",
-                "reference": "a48807183a4b819072f26e347bbd0b5199a9d15f",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e",
+                "reference": "cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e",
                 "shasum": ""
             },
             "require": {
@@ -1348,7 +1396,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2020-02-09T09:16:15+00:00"
+            "time": "2020-02-22T12:28:44+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -2565,10 +2613,14 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "makineza/framework": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.2"
+    },
     "platform-dev": []
 }
