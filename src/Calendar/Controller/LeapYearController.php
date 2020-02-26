@@ -4,6 +4,7 @@ namespace Calendar\Controller;
 
 use Calendar\Model\LeapYear;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class LeapYearController
 {
@@ -12,7 +13,7 @@ class LeapYearController
     {
         $leapYear = new LeapYear();
         if ($leapYear->isLeapYear($year)) {
-            return 'Yep, this is a leap year!';
+            return new Response(json_encode(['test' => 'Yep, this is a leap year!', 'name' => 'Albert']));
         }
         
         return 'Nope, this is not a leap year.';
