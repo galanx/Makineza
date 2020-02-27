@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72cbf6c571e63a543b9ade454e53aa22",
+    "content-hash": "0899aa323aa63fbdba908dcca18c2a32",
     "packages": [
         {
             "name": "makineza/framework",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/galanx/makineza-framework.git",
-                "reference": "03b1b91af5a00003d86d3079f62e1795ae74d110"
+                "reference": "feff78e3f575854e4a3489d10b5cf02f3b9c1c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/galanx/makineza-framework/zipball/03b1b91af5a00003d86d3079f62e1795ae74d110",
-                "reference": "03b1b91af5a00003d86d3079f62e1795ae74d110",
+                "url": "https://api.github.com/repos/galanx/makineza-framework/zipball/feff78e3f575854e4a3489d10b5cf02f3b9c1c83",
+                "reference": "feff78e3f575854e4a3489d10b5cf02f3b9c1c83",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,8 @@
                 "symfony/event-dispatcher": "^5.0",
                 "symfony/http-foundation": "^5.0",
                 "symfony/http-kernel": "^5.0",
-                "symfony/routing": "^5.0"
+                "symfony/routing": "^5.0",
+                "twig/twig": "^3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.0"
@@ -52,7 +53,7 @@
                 "framework",
                 "makineza"
             ],
-            "time": "2020-02-26T15:30:42+00:00"
+            "time": "2020-02-27T07:04:59+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -1084,6 +1085,68 @@
                 "dump"
             ],
             "time": "2020-01-25T15:56:29+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "3b88ccd180a6b61ebb517aea3b1a8906762a1dc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3b88ccd180a6b61ebb517aea3b1a8906762a1dc2",
+                "reference": "3b88ccd180a6b61ebb517aea3b1a8906762a1dc2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5",
+                "symfony/polyfill-ctype": "^1.8",
+                "symfony/polyfill-mbstring": "^1.3"
+            },
+            "require-dev": {
+                "psr/container": "^1.0",
+                "symfony/phpunit-bridge": "^4.4|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Twig Team",
+                    "role": "Contributors"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2020-02-11T15:33:47+00:00"
         }
     ],
     "packages-dev": [
